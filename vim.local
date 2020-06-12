@@ -1,0 +1,91 @@
+set hidden
+set nobackup
+set nowritebackup
+" set mouse=a " enable mouse for all mode
+" set cursorline
+
+set clipboard=unnamed
+set foldmethod=indent
+set foldlevel=99
+
+let g:is_posix = 1
+
+set noswapfile
+set nojoinspaces
+set nowrap
+set number
+set ttyfast
+set laststatus=2
+set ttimeout
+set ttimeoutlen=10
+set ignorecase
+" I don't use recording, don't judge me
+" inoremap <esc> <nop>
+inoremap jk <ESC>
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
+"Duplicate everything selected
+vmap D y'>p
+
+" Map Emacs like movement in Insert mode
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>^
+
+" Remap scrolling
+nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
+
+" Key binding
+let mapleader=" "
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>l :vsplit<CR>
+nnoremap <Leader>k :split<CR>
+nnoremap <Leader>wh :wincmd h<CR>
+nnoremap <Leader>wl :wincmd l<CR>
+nnoremap <Leader>wk :wincmd k<CR>
+nnoremap <Leader>wj :wincmd j<CR>
+nnoremap <Leader>w= :wincmd =<CR>
+nnoremap <Leader>wb :e#<CR>
+nnoremap <silent>qq :bp <BAR> bd #<CR>
+"Buffer
+nnoremap <Leader>tn :tabn<CR>
+nnoremap <Leader>tp :tabp<CR>
+nnoremap <Leader>tc :tabe<CR>
+nnoremap <Leader>tx :tabclose<CR>
+
+let $LOCALVIMRC = $HOME . "/.vim/vim.tmpl"
+"nnoremap <leader>elv :vsp $LOCALVIMRC<cr>
+"nnoremap <leader>slv :source $LOCALVIMRC<cr>
+
+" Persistent undo
+" Don't forget mkdir folder $HOME/.vim/undo
+set undofile
+set undodir=$HOME/.config/nvim/undo
+set undolevels=1000
+set undoreload=10000
+
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+set list
+
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+set autoindent
+set smartindent
+set splitright
+silent! set splitvertical
+au FocusGained,BufEnter * :checktime
+
