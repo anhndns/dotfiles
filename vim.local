@@ -72,7 +72,7 @@ set undolevels=1000
 set undoreload=10000
 
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
-set list
+set nolist
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
