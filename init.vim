@@ -29,6 +29,7 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'folke/todo-comments.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
   Plug 'nvim-telescope/telescope-live-grep-args.nvim'
+  Plug 'Equilibris/nx.nvim'
 call plug#end()
 " ================================================================================================
 " Raw vim setup
@@ -43,7 +44,8 @@ set foldmethod=manual
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
-
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 let g:is_posix = 1
 
 set noswapfile
@@ -55,6 +57,8 @@ set laststatus=2
 set ttimeout
 set ttimeoutlen=10
 set ignorecase
+nnoremap nn :nohlsearch<CR>
+nnoremap gb :Git blame<CR>
 " I don't use recording, don't judge me
 " inoremap <esc> <nop>
 inoremap jk <ESC>
@@ -477,4 +481,5 @@ lua << EOF
       TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED" } },
     },
   }
+  require("nx").setup {}
 EOF
