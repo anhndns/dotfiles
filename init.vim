@@ -1,36 +1,37 @@
-call plug#begin("~/.config/nvim/plugged")
-  Plug 'voldikss/vim-floaterm'
-  Plug 'scrooloose/nerdtree'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'powerline/powerline'
+ call plug#begin("~/.config/nvim/plugged")
+   Plug 'voldikss/vim-floaterm'
+   Plug 'preservim/nerdtree'
+   Plug 'vim-airline/vim-airline'
+   Plug 'vim-airline/vim-airline-themes'
+   Plug 'powerline/powerline'
 
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'rakr/vim-one'
-  Plug 'EdenEast/nightfox.nvim'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'w0rp/ale'
-  Plug 'easymotion/vim-easymotion'
+   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+   Plug 'junegunn/fzf.vim'
+   Plug 'rakr/vim-one'
+   Plug 'EdenEast/nightfox.nvim'
+   Plug 'scrooloose/nerdcommenter'
+   Plug 'w0rp/ale'
+   Plug 'easymotion/vim-easymotion'
 
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'airblade/vim-rooter'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'tpope/vim-fugitive'
-  Plug 'honza/vim-snippets'
-  Plug 'mariappan/dragvisuals.vim'
-  Plug 'sindrets/diffview.nvim'
-  Plug 'junegunn/vim-easy-align'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'folke/todo-comments.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
-  Plug 'nvim-telescope/telescope-live-grep-args.nvim'
-  Plug 'Equilibris/nx.nvim'
-call plug#end()
+   Plug 'jiangmiao/auto-pairs'
+   Plug 'tpope/vim-repeat'
+   Plug 'tpope/vim-surround'
+   Plug 'airblade/vim-rooter'
+   Plug 'sheerun/vim-polyglot'
+   Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+   Plug 'tpope/vim-fugitive'
+   Plug 'honza/vim-snippets'
+   Plug 'mariappan/dragvisuals.vim'
+   Plug 'sindrets/diffview.nvim'
+   Plug 'junegunn/vim-easy-align'
+   Plug 'nvim-lua/plenary.nvim'
+   Plug 'folke/todo-comments.nvim'
+   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+   Plug 'nvim-telescope/telescope-live-grep-args.nvim'
+   Plug 'Equilibris/nx.nvim'
+   Plug 'mhinz/vim-rfc'
+ call plug#end()
 " ================================================================================================
 " Raw vim setup
 "" ================================================================================================
@@ -306,7 +307,7 @@ let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs neede
 let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline
 let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
-
+" autocmd  FileType text source ./after/ftplugin/txt.vim
 "========================================================
 " COC:
 "========================================================
@@ -381,6 +382,7 @@ highlight Cursor ctermfg=Red ctermbg=Yellow cterm=bold guifg=red guibg=yellow gu
 highlight Normal ctermfg=Gray ctermbg=darkblue
 highlight Visual guifg=White guibg=#6c7c6c ctermbg=darkblue gui=none
 highlight clear SignColumn
+set guifont=JetBrains\ Mono\ 10
 set cursorline
 set signcolumn=yes
 set tw=72 fo=cqt wm=0
