@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,7 +17,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -168,7 +169,7 @@ zmodload -i zsh/complist
 
 export NVM_DIR="$HOME/.nvm"
 export BC_IP="root@128.199.103.115"
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS:$(go env GOPATH)/bin
 
 alias nodejs="node"
 alias ls='ls -G'
@@ -178,7 +179,9 @@ alias nvimcf='nvim ~/.config/nvim/init.vim'
 alias tmuxcf='nvim ~/.tmux.conf'
 alias zshexec='. ~/.zshrc'
 alias gcd='git checkout dev'
+alias e='english search'
 
+alias sed=gsed
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -187,10 +190,15 @@ export LANG=en_US.UTF-8
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export EDITOR='nvim'
-
 alias SQL="mysqlsh -u talaria -h 10.20.43.11 -D tala_migration -p"
 alias SQL_L="mysqlsh -h localhost -P 3306 -u root -D db -p"
 alias p="lynx  --display_charset=utf-8"
 alias dev="pwd | xargs -I{} '/Applications/Tini App Studio.app/Contents/MacOS/Tini App Studio' --args --runtime-env=dev {}"
 alias prod="pwd | xargs -I{} '/Applications/Tini App Studio.app/Contents/MacOS/Tini App Studio' {}"
 [ -f "/Users/lap00735/.ghcup/env" ] && source "/Users/lap00735/.ghcup/env" # ghcup-env
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
