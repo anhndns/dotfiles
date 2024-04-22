@@ -5,7 +5,7 @@
    Plug 'vim-airline/vim-airline-themes'
    Plug 'powerline/powerline'
 
-   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    Plug 'junegunn/fzf.vim'
    Plug 'rakr/vim-one'
    Plug 'EdenEast/nightfox.nvim'
@@ -153,7 +153,7 @@ endif
 "========================================================
 let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path '.git/**' -prune -o -path '**/node_modules/**' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'coverage/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-
+set rtp+=/opt/homebrew/opt/fzf
 " nnoremap <Leader>t :BTags<CR>
 " nnoremap <Leader>T :Tags<CR>
 " nnoremap <silent> <Leader>` :Marks<CR>
@@ -165,7 +165,7 @@ nnoremap <silent> t :bnext<CR>
 nnoremap <silent> T :bprev<CR>
 
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.config/nvim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number -- '.shellescape(<q-args>), 0,
